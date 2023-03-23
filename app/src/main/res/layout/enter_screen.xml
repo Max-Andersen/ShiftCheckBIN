@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light_blue">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/commonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/check_by_bin"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/text_input_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <com.santalu.maskedittext.MaskEditText
+            android:id="@+id/inputText"
+            android:layout_width="233dp"
+            android:layout_height="41dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="@string/enter_bin_iin"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:lines="1"
+            android:maxLines="1"
+
+            android:textColor="@color/light_blue"
+            android:textColorHint="@color/light_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:met_mask="#### ####" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--            style="@style/commonText"-->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/data_layout"
+        app:layout_constraintEnd_toEndOf="@+id/data_layout"
+        app:layout_constraintStart_toStartOf="@+id/data_layout"
+        app:layout_constraintTop_toTopOf="@+id/data_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="1dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/networkLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/networkImage"
+                android:layout_width="93dp"
+                android:layout_height="60dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/networkType"
+                app:srcCompat="@drawable/mastercard" />
+
+            <TextView
+                android:id="@+id/networkType"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/networkTypeText"
+                tools:text="Mastercard" />
+
+            <TextView
+                android:id="@+id/networkTypeText"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scheme_network"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/brandLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/networkLayout"
+            app:layout_constraintStart_toStartOf="@+id/networkLayout"
+            app:layout_constraintTop_toBottomOf="@+id/networkLayout">
+
+            <TextView
+                android:id="@+id/brandTypeText"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brand"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/brandText"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/brandTypeText"
+                tools:text="Visa/Dankort" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/typeOfCardLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/typeOfCardText"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/type"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/debitCard"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/debit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/separationOfCardType"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/separate_symbol"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/creditCard"
+                app:layout_constraintStart_toEndOf="@+id/debitCard"
+                app:layout_constraintTop_toBottomOf="@+id/typeOfCardText" />
+
+            <TextView
+                android:id="@+id/creditCard"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="1dp"
+                android:text="@string/credit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/prepaidLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/typeOfCardLayout"
+            app:layout_constraintTop_toTopOf="@+id/brandLayout">
+
+            <TextView
+                android:id="@+id/prepaidForCardText"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prepaid"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/prepaidYes"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/separationOfPrepaidType"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/separate_symbol"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/prepaidNo"
+                app:layout_constraintStart_toEndOf="@+id/prepaidYes"
+                app:layout_constraintTop_toBottomOf="@+id/prepaidForCardText" />
+
+            <TextView
+                android:id="@+id/prepaidNo"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardNumberInfoLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/brandLayout">
+
+            <TextView
+                android:id="@+id/cardNumberText"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/card_number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lengthText"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardNumberText" />
+
+            <TextView
+                android:id="@+id/length"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/lengthText"
+                app:layout_constraintStart_toStartOf="@+id/lengthText"
+                app:layout_constraintTop_toBottomOf="@+id/lengthText"
+                tools:text="16" />
+
+            <TextView
+                android:id="@+id/luhnText"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/luhn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardNumberText" />
+
+            <TextView
+                android:id="@+id/luhnYes"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="@string/yes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lengthText" />
+
+            <TextView
+                android:id="@+id/luhnSeparate"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="@string/separate_symbol"
+                app:layout_constraintEnd_toStartOf="@+id/luhnNo"
+                app:layout_constraintStart_toEndOf="@+id/luhnYes"
+                app:layout_constraintTop_toBottomOf="@+id/luhnText" />
+
+            <TextView
+                android:id="@+id/luhnNo"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/countryLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/typeOfCardLayout"
+            app:layout_constraintStart_toStartOf="@+id/typeOfCardLayout"
+            app:layout_constraintTop_toTopOf="@+id/cardNumberInfoLayout">
+
+            <TextView
+                android:id="@+id/countryText"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/country"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/country"
+                style="@style/clickableText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minLines="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countryText"
+                tools:text="🇩🇰 Denmark" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/bankLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardNumberInfoLayout">
+
+            <TextView
+                android:id="@+id/bankText"
+                style="@style/commonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bank"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/bankName"
+                    style="@style/commonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bankText"
+                    tools:text="Jyse Bank," />
+
+                <TextView
+                    android:id="@+id/bankTown"
+                    style="@style/commonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/bankName"
+                    app:layout_constraintTop_toBottomOf="@+id/bankText"
+                    tools:text="Hjørring" />
+
+            </LinearLayout>
+
+
+            <TextView
+
+                android:id="@+id/bankUrl"
+                style="@style/clickableText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/bankTown"
+                app:layout_constraintStart_toStartOf="@+id/bankName"
+                app:layout_constraintTop_toBottomOf="@+id/bankName"
+                tools:text="www.jyskebank.dk" />
+
+            <TextView
+                android:id="@+id/bankPhone"
+                style="@style/clickableText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/bankUrl"
+                app:layout_constraintStart_toStartOf="@+id/bankUrl"
+                app:layout_constraintTop_toBottomOf="@+id/bankUrl"
+                tools:text="+4589893300" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/server_error_response"
+        style="@style/commonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/data_layout"
+        app:layout_constraintEnd_toEndOf="@+id/data_layout"
+        app:layout_constraintStart_toStartOf="@+id/data_layout"
+        app:layout_constraintTop_toTopOf="@+id/data_layout" />
+
+    <TextView
+        android:id="@+id/requestHistory"
+        style="@style/commonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/request_history"
+        app:layout_constraintBottom_toBottomOf="@+id/clearButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data_layout" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="90dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/clear_history"
+        android:textColor="@color/light_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/background_light_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/requestHistory">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

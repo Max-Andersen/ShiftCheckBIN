@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ShiftCheckBIN</string>
+    <string name="check_by_bin">Check card information by BIN/IIN number.</string>
+    <string name="scheme_network">Scheme/Network</string>
+    <string name="brand">Brand</string>
+    <string name="type">Type</string>
+    <string name="debit">Debit</string>
+    <string name="separate_symbol">/</string>
+    <string name="credit">Credit</string>
+    <string name="prepaid">Prepaid</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="card_number">Card Number</string>
+    <string name="length">Length</string>
+    <string name="luhn">Luhn</string>
+    <string name="country">Country</string>
+    <string name="bank">Bank</string>
+    <string name="bin_number_not_found">Bin number not found!</string>
+    <string name="too_many_requests">Too many requests, please try later!</string>
+    <string name="unexpected_error">Unexpected error!</string>
+    <string name="time_out_error">Time out error!</string>
+    <string name="enter_bin_iin">Enter BIN/IIN</string>
+    <string name="request_history">Request history</string>
+    <string name="clear_history">Clear</string>
+    <string name="country_text"><u>%1$s %2$s</u></string>
+    <string name="bank_name">%1$s, </string>
+</resources>
